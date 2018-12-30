@@ -7,16 +7,18 @@ import { logoutAction } from '../action/loginAction';
 const renderLoginoutbutton = (props) => {
 		
 		if (props.login && props.login.sucess) {
-			
+
 						return (<ul className="navbar-nav ml-auto">
-							<li className="nav-item">
+
+            <Link className="nav-link" to="/dashboard">
+              <i className="fas fa-user-circle mr-1" />
 							{props.login.decodedtoken.fullname}
-							</li>
+							</Link>
 							
 							<li className="nav-item">
-								<button className="nav-link" onClick={() => {props.logoutAction()}}>
+								<a className="nav-link" onClick={() => {props.logoutAction()}}>
 									Logout
-								</button>
+								</a>
 							</li>
 						</ul>);
 
